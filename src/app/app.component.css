@@ -1,0 +1,64 @@
+/* Hamburger button styles */
+.hamburger-button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    z-index: 1000;
+    /* Keep on top */
+    font-size: 30px;
+    color: white;
+    transition: left 0.3s ease;
+}
+
+/* When the sidebar is open, position the hamburger button inside the sidebar (top-left) */
+.sidebar-opened {
+    top: 0;
+    left: 0;
+    /* Position at the left-top corner of the sidebar */
+}
+
+/* When the sidebar is closed, position the hamburger button at the top-left of the page */
+.sidebar-closed {
+    top: 0;
+    left: 0;
+    /* Position at the left-top corner of the page */
+}
+
+/* Main content positioning when the sidebar is hidden */
+main {
+    transition: margin-left 0.3s ease;
+}
+
+aside.hidden+main {
+    margin-left: 0;
+}
+
+#body {
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    background-color: #1f2937;
+    height: 100%;
+    padding: 25px;
+}
+
+footer {
+    width: 60%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.chat-input {
+    flex: 1;
+    /* Take up remaining space */
+    margin: 0 10px;
+    /* Add some horizontal space around the input */
+    border-radius: 10px;
+}
+
+header {
+    width: 100%;
+}

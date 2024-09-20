@@ -1,0 +1,54 @@
+<div class="flex h-screen bg-gray-900 text-white" id="body">
+
+  <!-- Hamburger button (visible in both states) -->
+
+<div class="sidebar">
+
+  <button 
+  (click)="toggleSidebar()" 
+  class="hamburger-button absolute p-4" 
+  [ngClass]="{ 'sidebar-opened': isSidebarOpen, 'sidebar-closed': !isSidebarOpen }"
+>
+  <span class="material-icons">menu</span>
+</button>
+  <!-- Sidebar -->
+  <aside [class.hidden]="!isSidebarOpen" class="w-64 bg-gray-800 p-4 pt-16 relative">
+    <div class="text-lg font-semibold">NotebookLM (Experimental)</div>
+    <div class="mt-4">
+      <h3 class="text-sm font-semibold">Sources</h3>
+      <label class="flex items-center mt-2">
+        <input type="checkbox" checked class="form-checkbox h-4 w-4 text-blue-600">
+        <span class="ml-2 text-sm">Select all sources</span>
+      </label>
+      <button class="mt-4 px-4 py-2 bg-gray-700 text-sm rounded">+ Add source</button>
+    </div>
+  </aside>
+</div>
+
+  <!-- Main Content -->
+  <main class="flex-1 flex items-center flex-col">
+    <!-- Top Section -->
+    <header class="flex justify-between p-4 bg-gray-800">
+      <h1 class="text-lg font-semibold">Untitled notebook</h1>
+      <div class="flex items-center">
+        <button class="px-4 py-2 bg-blue-600 rounded">Share</button>
+      </div>
+    </header>
+
+    <!-- Note Section -->
+    <div class="flex-1 flex items-center justify-center bg-gray-900 text-gray-400">
+      <span>Your saved notes will appear here</span>
+    </div>
+
+    <!-- Bottom Bar -->
+    <footer class="p-4 bg-gray-800">
+      <div class="flex justify-between items-center">
+        <button class="px-4 py-2 bg-gray-700 text-sm rounded">View Chat</button>
+        <input type="text" class="chat-input px-4 py-2 bg-gray-700 text-sm rounded" placeholder="Type your message..." />
+        <div class="flex items-center">
+          <button class="px-4 py-2 bg-gray-700 text-sm rounded">Upload a source</button>
+        </div>
+      </div>
+    </footer>
+  </main>
+</div>
